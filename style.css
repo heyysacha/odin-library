@@ -1,0 +1,16 @@
+* {
+    --main-color: #c6bcbc;
+}
+
+body {
+    background-color: var(--main-color);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#library-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(400px, 1fr));
+    grid-template-rows: auto;
+}
