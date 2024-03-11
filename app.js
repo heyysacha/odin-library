@@ -6,37 +6,74 @@ const myLibrary = [
         author: 'jk rowling',
         pages: 500,
         read: true,
-        info() {
-            return `${this.title} by ${this.author}, ${this.pages} pages long, ${this.read}`;
+        info()  
+        {
+        if (this.read)
+            {
+            return `<h2>${this.title}</h2> <h3>${this.author}</h3> <p>${this.pages} pages long, read</p>`;
+            }
+        else
+            {
+            return `<h2>${this.title}</h2> <h3>${this.author}</h3> <p>${this.pages} pages long, not yet read</p>`;
+            }
         }
     },
-        {
+    {
         title: 'harry potter',
         author: 'jk rowling',
         pages: 500,
         read: true,
-        info() {
-            return `${this.title} by ${this.author}, ${this.pages} pages long, ${this.read}`;
+        info()  
+        {
+        if (this.read)
+            {
+            return `<h2>${this.title}</h2> <h3>${this.author}</h3> <p>${this.pages} pages long, read</p>`;
+            }
+        else
+            {
+            return `<h2>${this.title}</h2> <h3>${this.author}</h3> <p>${this.pages} pages long, not yet read</p>`;
+            }
         }
     }
 ];
 
-for (let i=0; i < myLibrary.length; i++)
+function updateLibrary() 
 {
-    console.log(myLibrary[i]);
-    libraryGrid.insertAdjacentHTML("afterbegin", `<div class="book">${myLibrary[i].info()}</div>`);
-}
+    libraryGrid.innerHTML = '';
+    for (let i=0; i < myLibrary.length; i++)
+        {
+            libraryGrid.insertAdjacentHTML("afterbegin", `<div class="book">${myLibrary[i].info()}</div>`);
+        }
+};
 
-// function Book(title, author, pages, read) {
-//     return
-//         {
-//         title: title,
-//         author: author,
-//         pages: pages,
-//         read: read
-//         }
-// }
+function Book(title, author, pages, read) 
+{
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+    this.info = function() 
+    {
+        if (this.read)
+            {
+            return `<h2>${this.title}</h2> <h3>${this.author}</h3> <p>${this.pages} pages long, read</p>`;
+            }
+        else
+            {
+            return `<h2>${this.title}</h2> <h3>${this.author}</h3> <p>${this.pages} pages long, not yet read</p>`;
+            }
+    }
+};
 
-// function addBookToLibrary(bookName) {
-//   // do stuff here
-// }
+// function newBookButton() {
+    
+// };
+
+
+//testing area
+
+const uglies = new Book('uglies', 'scott westerfield', '300', false);
+
+myLibrary.push(uglies);
+
+updateLibrary();

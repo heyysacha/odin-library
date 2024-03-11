@@ -9,8 +9,27 @@ body {
     padding: 0;
 }
 
+h1 {
+    text-align: center;
+}
+
 #library-grid {
+    justify-self: center;
     display: grid;
-    grid-template-columns: repeat(4, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-template-rows: auto;
+    gap: 10px;
+    place-items: center;
+}
+
+.book {
+    height: 200px;
+    width: 150px;
+    border: solid;
+    margin: 20px;
+    
+    h2, h3, p {
+        text-align: center;
+        padding: 5px;
+    }
 }
