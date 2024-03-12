@@ -117,6 +117,7 @@ const resetForm = () => {
     authorInput.value = '';
     pagesInput.value = '';
     readInput.value = 'false';
+    colorInput.value = '#000000';
 };
 
 const addNewBook = () => {    
@@ -154,8 +155,6 @@ addBookBtn.addEventListener('click', addNewBook);
 //test books
 
 function testConstructorBooks() {
-    myLibrary.push(new Book('Harry Potter', 'J.K. Rowling', '500', true));
-
     myLibrary.push(new Book('Fight Club', 'Chuck Palahniuk', '250', false, '#aa5050'));
 
     myLibrary.push(new Book('Uglies', 'Scott Westerfield', '300', true, '#745491'));
@@ -163,6 +162,8 @@ function testConstructorBooks() {
     myLibrary.push(new Book('Pretties', 'Scott Westerfield', '300', false, '#b77835'));
 
     myLibrary.push(new Book('Specials', 'Scott Westerfield', '300', false, '#4d9457'));
+    
+    myLibrary.push(new Book('Catcher in the Rye', 'J.D. Salinger', '200', true));
 
     updateLibrary();
 };
