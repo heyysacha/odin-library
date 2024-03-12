@@ -1,7 +1,7 @@
 * {
     --main-color: #c6bcbc;
     --blue: #5f9ea0;
-    --red: #aa5050;
+    --black: #4d9457;
 }
 
 body {
@@ -33,7 +33,7 @@ h1 {
 .book {
     height: 300px;
     width: 250px;
-    border: solid;
+    border: solid black;
     margin: 10px;
     background-color: var(--blue);
     border-radius: 5px;
@@ -64,6 +64,12 @@ h1 {
         width: 40%;
         margin: 20px;
     }
+
+    
+}
+
+div.false {
+    color: white;
 }
 
 #new-book {
@@ -117,5 +123,7 @@ fieldset {
     
     button {
         border-radius: 5px;
+        margin: 5px;
+        width: 30%;
     }
 }
